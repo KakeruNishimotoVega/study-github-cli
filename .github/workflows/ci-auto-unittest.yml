@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 # リポジトリをチェックアウト
-      - uses: actions/setup-node@v5 # Node.jsのセットアップ
+      - uses: actions/setup-node@v4 # Node.jsのセットアップ
         with:
-          node-version: '16.15.1' # Node.jsのバージョン設定
+          node-version: '18' # Node.jsのバージョン設定
+      - run: npm install # 依存関係のインストール
       - run: npm test # テストの実行
