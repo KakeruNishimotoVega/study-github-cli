@@ -1,0 +1,13 @@
+name: CI UNITTEST
+on:
+  pull_request:
+    paths: ['**/*.ts'] # .tsファイルが変更されたときに実行
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # リポジトリをチェックアウト
+      - uses: actions/setup-node@v5 # Node.jsのセットアップ
+        with:
+          node-version: '16.15.1' # Node.jsのバージョン設定
+      - run: npm test # テストの実行
