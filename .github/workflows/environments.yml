@@ -1,0 +1,19 @@
+name: Envitonments
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        type: environment # 入力パラメータでEnvitonmentsを切り替える
+        default: 'test'
+        required: true
+        description: 'Environment to deploy'
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }} # 利用するEnvitonmentsを指定
+    env:
+      USERNAME: ${{ vars.USERNAME }}  # Envitonments variables のUSERNAMEを参照
+      PASSWORD: ${{ secrets.PASSWORD }}  # Envitonments secrets のPASSWORDを参照
+    steps:
+      - run : echo "${USERNAME}"
+      - run : echo "${PASSWORD:0:1} ${PASSWORD#?}"
