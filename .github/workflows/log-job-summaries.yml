@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: | # マークダウンテキストをジョブサマリーへ出力
-          echo "## Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- file line" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- second line" >> "${GITHUB_STEP_SUMMARY}"
+          {
+            echo "## Title :rocket:"
+            echo "- file line"
+            echo "- second line"
+          } >> "${GITHUB_STEP_SUMMARY}"
