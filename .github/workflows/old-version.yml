@@ -4,4 +4,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # Dependapotの動作検証のため、わざと古いバージョンを指定
+      - uses: actions/checkout@v4 # Dependapotの動作検証のため、わざと古いバージョンを指定
