@@ -2,7 +2,7 @@ name: Bash tracing
 on: push
 jobs:
   log:
-    runs-on: ubntu-latest
+    runs-on: ubuntu-latest
     steps:
       - run: |  # Bashのトレーシングオプションを有効化して、日付とホスト名を出力
           set -x  # トレーシングオプションを有効化
